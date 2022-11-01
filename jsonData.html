@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- <div class="col-lg-3 col-md-6 mb-4 pb-2">
+    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
+        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
+            <h4 class="font-weight-bold text-white mb-0">$99</h4>
+        </div>
+        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
+            <img class="rounded-circle w-100 h-100" src="img/product-2.jpg" style="object-fit: cover;">
+        </div>
+        <h5 class="font-weight-bold mb-4">Vanilla Ice Cream</h5>
+        <a href="" class="btn btn-sm btn-secondary">Order Now</a>
+    </div>
+</div> -->
+<script type="text/javascript" ></script>
+<script type = "text/javascript" >
+// $(function (){
+//   $("#btn").click(function ()  {
+//     $.getJSON("json/products.json", function (data){
+//       var $jsontip = $("#jsonTip");
+//       var strHtml = "";
+//       //存储数据的变量
+//       $jsontip.empty();
+//       //清空内容
+//       $.each(data, function (infoIndex, info){
+//         strHtml += "Name" + info["productName"] + "<br>";
+//         strHtml += "loaction" + info["location"] + "<br>";
+//         strHtml += "id" + info["id"] + "<br>";
+//         strHtml += "price" + info["price"] + "<br>";
+//         strHtml += "<hr>"
+//       })
+//       $jsontip.html(strHtml);
+//       //显示处理后的数据
+//     })
+//   })
+// })
+//****************************************************************************
+// function displayArtists() {
+
+// // Our JSON data
+// var data = 
+//   {
+//     "artists" : [
+//       { 
+//         "artistname" : "Leonard Cohen",
+//         "born" : "1934"
+//         },
+//       { 
+//         "artistname" : "Joe Satriani",
+//         "born" : "1956" 
+//         },
+//       { 
+//         "artistname" : "Snoop Dogg",
+//         "born" : "1971"
+//         }
+//     ]
+//   }
+  
+//   // Put the data into a variable and format with HTML tags
+//   var output = "<h1>Artists</h1>";
+//   output += "<ul>";    
+  
+//   // Loop through the artists
+//   for (var i in data.artists) {
+//       output += "<li>" + data.artists[i].artistname + " (Born: " + data.artists[i].born + ")</li>"; 
+//   }
+  
+//   output += "</ul>";
+
+//   // Output the data to the "artistList" element
+//   document.getElementById("artistList").innerHTML=output;
+// }    
+
+// // Load the above function when the window loads
+// window.onload = displayArtists;
+//*****************************************************************
+// $(function() {
+
+// // User clicks the "getData" button
+// $("#getData").click(function() {
+
+//   // Put artistList element and JSON file location into a variable
+//   var artistList = $("#artistList");
+//   var url = "./json/products.json";
+  
+//   // Get the JSON file
+//   $.getJSON(url, function(data) {
+
+//     // Put artist info into a variable
+//     var artists = data.products.map(function(item) {
+//       return item.productName + " (" + item.location + ")";
+//     });
+    
+//     // Remove all child nodes (including text nodes) 
+//     artistList.empty();
+
+//     // Format artists with HTML tags 
+//     if (products.length) {
+//       var content = "<li>" + products.join("</li><li>") + "</li>";
+//       var list = $("<ul>").html(content);
+//       artistList.append(list);
+//     }
+//   });
+// });
+// });
+//***************************************************************************
+// $.getJSON("./json/products.json", function (data) {
+//              var strHTML = "";//初始化保存内容变量
+//              $.each(data, function (infoIndex, info) {
+//              strHTML += "<tr>" +
+//              "<td>" + info["fileName"] + "</td>" +
+//              "<td>" + info["sendAuthor"] + "</td>" +
+//              "<td>" + info["email"] + "</td>" +
+//              "</tr>"; 
+//              }) 
+//              $("#show-download-table").append(strHTML); 
+//         });
+
+
+
+
+
+
+</script>
+</head>
+
+
+<body>
+    <h1 id="Name"></h1>
+    <h2 id="price"></h2>
+    <h3 id="location"></h3>
+    <h4 id="len"></h4>  
+
+
+    <script>
+        
+        $.getJSON("./json/products.json", function (data) {
+            console.log(data) 
+
+             var NameHTML = "";//初始化保存内容变量
+             var Price = "";
+             var location = "";
+             $.each(data, function (infoIndex, info) {
+             NameHTML += "<tr>" +
+             "<td>" + info["productName"] + "</td>" +
+             "</tr>";
+             Price += "<tr>" +
+             "<td>" + info["price"] + "</td>" +
+             "</tr>";
+             location += "<tr>" +
+             "<td>" + info["location"] + "</td>" +
+             "</tr>";
+             })
+             $("#Name").append(NameHTML); 
+             $("#price").append(Price);
+             $("#location").append(location);
+             
+
+        });
+    
+    </script>
+    
+</body>
+
+
+</html>
