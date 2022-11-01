@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="54f91e9d-ae59-4b8c-aedc-62f4c933e283" name="NYC" url="http://yoshimihk.com">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="38.48.120.118" port="22122" sshConfigId="f76dd23d-c1ec-467c-a6d6-fbf3177dbf21" sshConfig="root@38.48.120.118:22122">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
